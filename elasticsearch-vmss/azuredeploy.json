@@ -4,7 +4,7 @@
   "parameters": {
     "clusterName": {
       "type": "string",
-      "defaultValue": "es-azure",
+      "defaultValue": "us-elastic",
       "metadata": {
         "description": "The name of the cluster."
       }
@@ -21,7 +21,7 @@
       "metadata": {
         "description": "Number of VM instances (200 or less)."
       },
-      "defaultValue": 2,
+      "defaultValue": 3,
       "maxValue": 200
     },
     "adminUsername": {
@@ -39,7 +39,7 @@
     },
     "_artifactsLocation": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/elasticsearch-vmss/",
+      "defaultValue": "https://raw.githubusercontent.com/PushkalaSuriyanarayanan/azure-quickstart-templates/master/elasticsearch-vmss/",
       "metadata": {
         "description": "Change this value to your repo name if deploying from a fork"
       }
@@ -91,8 +91,8 @@
     "loadBalancerProbeId": "[concat(variables('loadBalancerId'),'/probes/tcpProbe')]",
     "sshProbeId": "[concat(variables('loadBalancerId'),'/probes/sshProbe')]",
     "subnetName": "[concat(variables('namingInfix'), '-subnet')]",
-    "masterSize": "Standard_DS2_v2",
-    "vmSku": "Standard_DS2_v2",
+    "masterSize": "Standard_D4S_v3",
+    "vmSku": "Standard_D4S_v3",
     "imageReference": {
       "publisher": "Canonical",
       "offer": "UbuntuServer",
@@ -100,7 +100,7 @@
       "version": "latest"
     },
     "elasticSetupScriptUrl": "[uri(parameters('_artifactsLocation'), concat('install-elasticsearch.sh', parameters('_artifactsLocationSasToken')))]",
-    "diskSetupScriptUrl": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/shared_scripts/ubuntu/vm-disk-utils-0.1.sh",
+    "diskSetupScriptUrl": "https://raw.githubusercontent.com/PushkalaSuriyanarayanan/azure-quickstart-templates/master/shared_scripts/ubuntu/vm-disk-utils-0.1.sh",
     "linuxConfiguration": {
       "disablePasswordAuthentication": true,
       "ssh": {
