@@ -61,7 +61,7 @@ else
 fi
 
 #Script Parameters
-CLUSTER_NAME="us-elastic"
+CLUSTER_NAME="eu-elastic"
 ES_VERSION="7.6.2"
 IS_DATA_NODE=1
 
